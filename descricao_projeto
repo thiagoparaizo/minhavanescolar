@@ -1,0 +1,103 @@
+Aplicação Mobile - (sem nome definido) ** VAN LEGAL, TRASPORTEDIGITAL, DIGITAL VAN, VANTEC, TECVAN, MINHA VAN, etc etc etc
+
+----------- DESCRIÇÃO GERAL DA IDEIA DA APLICAÇÃO -------------------
+Objetivo: 
+Aplicação para axiliar alunos, pais, transportes esolares/motoristas e escolas, nas atividades relacionadas ao transporte de alunos, oferecendo segurança, agilidade, praticidade, dentre muitas outras vantagens, buscando a operacionalização centralizada na palma da mão, em tempo real, de forma segura e confiável.
+ 
+ 
+PAIS e ALUNOS (Benefícios):
+	- Auxilia a encontrar o melhor transporte escolar (particular), baseado em vários aspectos:
+		- qualificação dos profissionais (empresa ou particular, formação, esperiência, etc)
+		- localização da residência, da escola e rota do transporte (tempo de rota).
+		- avaliações de outros usuários (avaliações positivas).
+		- tipo de transporte e opcionais (tipo de veículos, itens de segurança, interatividade, auxiliares, etc)
+		- preço e formas de pagamento (disponibilidade de pagamento via aplicativo)	
+	- Acompanhamento em tempo real do aluno e do transporte. 
+	- Aviso de chegada na residência e na escola. Aviso de que o aluno encontrou e entrou no transporte.
+	- Avisos e alertas, sobre atrasos, transito, ou qualquer outra informação
+	- Possibilidade de pagamento direto no aplicativo.
+	- Aviso de ausência, notificando o motorista.
+	*(Funcnionalidades diferentes para os pais e alunos, no aplicativo) 
+	
+MOTORISTA - TRASNPOSRTE ESCOLAR (Benefícios):
+	- Auxiliar a encontrar novo aluno disponível na escola/rota/região.	
+	- Cadastros dos alunos, com todas as informações (telefones de contado, endereços, foto), de forma online, seguro, e atualizavel (pelo pai do aluno, via app)
+	- Cadastros de escolas e rotas.
+	- Avisos: ausências previstas e não previstas, troca de destino, etc.
+	- Alerta de chegada do veículo na escola ou residência.
+	- Contagem de alunos.
+	- Controle financeiro, percurso, gastos, etc.
+	
+ESCOLA (Benefícios):
+	- Segurnaça do aluno e motorista.
+	- transportes e motoristas cadastrados e verificados.
+	- aviso de chegadas de veículo.
+	- controle de aluno e veículo.
+	- avisos diversos: dia não letivos, mudanças de horários, etc
+	- alerta de atrasos, etc.
+		
+--------------------------------------------------------------------------
+
+atividades:
+
+1 - Entender a ideia do app
+----------------------------------------------------------------------------------------------------------------------------------------------------
+2 - Contar ou incluir mais funcionalidades, outras vantagens, aopntar pontos positivos ou negativos, dificuldades de uso, adaptação, etc..
+----------------------------------------------------------------------------------------------------------------------------------------------------
+3 - tentar separar as funcnionalidades, por papeis. Entenda papeis, como personagens: 
+	1 - RESPONSAVEL(pai, mae, avo, tio, etc)
+	2 - ALUNOS
+	3 - TRANSPORTE(motorista, empresa, van,)
+	4 - ESCOLA
+	
+	* pensando que cada um desses 4 personagens, terá uma visão diferente do app, ou versões diferentes do app
+----------------------------------------------------------------------------------------------------------------------------------------------------
+4 - Tentar descrever detalhadamente, as informações básicas de cada personagem, para fim de criação da base de cadastro, e seuas relacionamentos.
+	A idéia é criar um cadastro de todos os envolvidos (personagens), por exemplo:
+	
+	Detalhamentos dos personagens (chamados tbm de objetos, ou no caso de banco de dados, chamados de tabelas):
+		ESCOLA
+			- identificação_unica_escola(id)
+			- nome
+			- endereço
+			- contato(telefones)
+			- email
+			- responsavel
+			etc....
+			
+		ALUNO
+			- identificação_unica(id)
+			- escola(identificação_unica_escola)
+			- matricula
+			- nome
+			- serie
+			- endereço
+			- contatos
+			- foto
+			etc...
+		
+	
+	Relacionamento entre os objetos:
+	
+		1 ESCOLA
+			|_(x)TRANSPORTES
+				|_(X)ALUNOS
+						(1-2)RESPONSAVEIS
+						
+		Cada ESCOLA, pode ter vários TRANSPORTES. Cada TRANSPORTE, pode ter vários ALUNOS. Cada Aluno, pode ter 1 ou 2 RESPONSAVEIS.
+			
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+**** a ideia inicial que eu tive, como infraestrutura da aplicação, e ferramentas, seria usar o framework IONIC para o desenvolvimento da interface (UI), e para
+a estrutura de dados e os serviços, o Firebase (NoSQL do google), mas queria que você pesquisasse mais sobre o assunto, para vermos se ainda é a melhor opção.
+ 
+
+5 - Pensar no melhor jeito de armazenamento e acesso das informações, que facilite a integração via web, e dispositivos móveis (celulares e tablets)
+	- pesquisar sobre NoSQL https://pt.wikipedia.org/wiki/NoSQL
+		opções: firebase (https://firebase.google.com/docs/database/?hl=pt-br), mongodb
+
+		
+6 - pensar no melhor jeito de desenvolvimento da interface, utilizando frameworks
+	opção: IONIC (https://www.google.com.br/search?q=ionic&oq=ionic&aqs=chrome..69i57j69i65l2j69i60l2.872j0j4&sourceid=chrome&ie=UTF-8)
+		https://translate.google.com.br/translate?hl=pt-BR&sl=en&u=https://ionicframework.com/&prev=search
+		https://www.youtube.com%2Fwatch%3Fv%3D-L9jJzF2nNA&usg=AFQjCNHe2mTS_C8s6AuNm6QrDYvaP-15_g
